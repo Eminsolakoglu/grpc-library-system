@@ -6,6 +6,7 @@ Bu proje, bir üniversiteye ait çevrim içi kütüphane sisteminin `gRPC` tekno
 
 ## 🗂️ Proje Yapısı
 
+```bash
 grpc_university_library/
 ├── protos/ # .proto dosyası
 │ └── university.proto
@@ -16,7 +17,7 @@ grpc_university_library/
 ├── grpcurl-tests.md # Test çıktıları
 ├── DELIVERY.md # Teslim belgesi
 └── README.md # Bu dosya
-
+```
 
 ---
 
