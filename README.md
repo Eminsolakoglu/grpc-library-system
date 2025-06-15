@@ -31,29 +31,35 @@ Kurulum:
 
 ```bash
 pip install grpcio grpcio-tools grpcio-reflection
-
+```
 ⚙️ .proto Derleme
 
+```bash
 python -m grpc_tools.protoc \
   -I./protos \
   -I$(python -c 'import grpc_tools; import os; print(os.path.dirname(grpc_tools.__file__) + "/_proto")') \
   --python_out=./server \
   --grpc_python_out=./server \
   ./protos/university.proto
-
+```
 
 Ardından university_pb2.py ve university_pb2_grpc.py dosyaları oluşacaktır.
 
 ▶️ Uygulama Çalıştırma
 
 Sunucu:
+```bash
 python server/server.py
-
+```
 İstemci:
+```bash
 python client/client.py
+```
 
 🧪 grpcurl Testi
 Sunucu çalışıyorken başka bir terminalde şu komutla test yapılabilir:
+```bash
 grpcurl -plaintext -d '{}' localhost:50051 university.BookService/ListBooks
+```
 Tüm testler için grpcurl-tests.md dosyasına bakınız.
 
